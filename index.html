@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glock Group</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #000;
+    color: #fff;
+    font-family: 'Share Tech Mono', 'Courier New', monospace;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+  }
+
+
+  #screen1 {
+    position: fixed;
+    inset: 0;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    animation: fadeOutScreen1 0.5s ease-in-out 3s forwards;
+  }
+
+  #screen1 .alert-text {
+    font-size: clamp(16px, 3vw, 28px);
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 2;
+    animation: flicker 0.15s infinite alternate;
+  }
+
+  #screen1 .arabic-text {
+    font-size: clamp(14px, 2.5vw, 22px);
+    letter-spacing: 1px;
+    margin-top: 10px;
+    opacity: 0.85;
+    text-transform: none;
+    font-family: 'Courier New', monospace;
+  }
+
+  @keyframes flicker {
+    0%   { opacity: 1; }
+    100% { opacity: 0.88; }
+  }
+
+  @keyframes fadeOutScreen1 {
+    0%   { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.85); pointer-events: none; }
+  }
+
+ 
+  #screen2 {
+    position: fixed;
+    inset: 0;
+    background: #111;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 30px 20px;
+    opacity: 0;
+    transform: scale(0.85);
+    animation: showScreen2 0.5s ease-out 3.4s forwards;
+    overflow-y: auto;
+    z-index: 5;
+  }
+
+  @keyframes showScreen2 {
+    0%   { opacity: 0; transform: scale(0.85); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+
+ 
+  .avatar-container {
+    width: 320px;
+    height: 200px;
+    border-radius: 0;
+    overflow: hidden;
+    border: 2px solid #888;
+    margin-bottom: 20px;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .avatar-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+ 
+  .hacked-title {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: clamp(28px, 6vw, 52px);
+    font-weight: 900;
+    letter-spacing: 4px;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+
+  .terminal-box {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 600px;
+    padding: 20px 24px;
+    font-size: clamp(12px, 2vw, 14px);
+    line-height: 1.9;
+    direction: rtl;
+    text-align: right;
+  }
+
+  .terminal-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+    direction: ltr;
+  }
+
+  .dot { width: 12px; height: 12px; border-radius: 50%; background: #555; }
+
+  .terminal-url {
+    color: #ccc;
+    font-size: 13px;
+    margin-left: 8px;
+  }
+
+  .terminal-prompt {
+    color: #fff;
+    font-size: 13px;
+    direction: ltr;
+    text-align: left;
+    margin-bottom: 12px;
+  }
+
+  .terminal-prompt span {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+  }
+
+  .terminal-body {
+    color: rgb(208, 208, 208);
+    font-family: 'Share Tech Mono', 'Courier New', monospace;
+  }
+
+  .footer-text {
+    color: #555;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-top: 24px;
+    text-transform: uppercase;
+  }
+
+  
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0,0,0,0.06) 2px,
+      rgba(0,0,0,0.06) 4px
+    );
+    pointer-events: none;
+    z-index: 100;
+  }
+</style>
+</head>
+<body>
+
+
+<div id="screen1">
+  <div class="alert-text">
+    .. SECURITY ALERT Frank IN THE SYSTEM <br>
+    DISCORD.GG/126<br> <span class="arabic-text">لاتنسى تخش الدس</span>
+  </div>
+</div>
+
+
+<div id="screen2">
+
+
+  <div class="avatar-container">
+    <img src="https://media1.tenor.com/m/St9dveMzIYwAAAAC/itachi.gif" alt="avatar" onerror="this.style.display='none'">
+  </div>
+
+  <div class="hacked-title">HACKED BY FRANK</div>
+
+  <div class="terminal-box">
+    <div class="terminal-header">
+      <div class="dot"></div>
+      <span class="terminal-url">discord.gg/126</span>
+    </div>
+    <div class="terminal-prompt">GlockGroup@system:~$ <span>why?</span></div>
+    <div class="terminal-body">
+     Glock Group<br>
+      Glock Group<br>
+      Glock Group<br>
+      Glock Group<br>
+      Glock Group<br>
+      # Glock Group
+    </div>
+  </div>
+
+  <div class="footer-text">OFFICALY BLACK$HAMMER • FRANKNETWORK</div>
+</div>
+
+<audio id="bgMusic" src="song.mp3" preload="auto"></audio>
+
+<script>
+  
+  const audio = document.getElementById('bgMusic');
+  audio.volume = 0.8;
+
+  
+  const tryPlay = () => {
+    audio.play().catch(() => {
+      document.addEventListener('click', () => audio.play(), { once: true });
+    });
+  };
+
+  window.addEventListener('load', tryPlay);
+</script>
+
+</body>
+</html>
